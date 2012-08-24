@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<title></title>
+<link rel="stylesheet" href="libs/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+<link rel="stylesheet" href="main.css" />
+<script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>
+<script src="libs/jquery/jquery.js"></script>
+<script src="libs/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+<script src="main.js"></script>
+
+</head>
+<body>
+	<!-- Home -->
+	<div data-role="page" id="maps">
+		<div data-theme="b" data-role="header">
+			<h3>JSAG Workshop</h3>
+		</div>
+		<div data-role="content" style="padding: 10px">
+			<div id="map_canvas" style="height: 100%; width: 100%; position: absolute;"></div>
+		</div>
+		<div data-theme="b" data-role="footer" data-position="fixed" style="position: absolute;">
+			<a href="#" data-theme="b" data-role="button" style="left: 70%;" onclick="findLocation()">Location</a>
+		</div>
+		<!-- Page level javascript -->
+		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCVoBtwEfRF0uXiBEO6DP23ZSIbyoD-6VQ&sensor=false"></script>
+		<script type="text/javascript" src="maps.js"></script>
+		<script type="text/javascript">
+            $('.page-map').live('pageinit', function() {
+            	findLocation ();
+            });
+        </script>
+		
+	</div>
+</body>
+</html>
